@@ -3,7 +3,6 @@
 /**
  * iNav class
  *
- * @category  Database Access
  * @package   iNav
  * @author    iZume <izume32@gmail.com>
  * @link      http://github.com/iZume/iNav-Class
@@ -47,15 +46,18 @@ class iNav{
 
     private $dropdownConfig = array();
 
-    function __construct($arr = array()) {
-        $this->config['allowedAttr'] = array(
-            'class' => array(), 
-            'id' => array(), 
-            'href' => array(
-                'a'
-            ),
-            'data' => array()
-        );
+    function __construct($arr = array(
+            'allowedAttr' => array(
+                'class' => array(), 
+                'id' => array(), 
+                'href' => array(
+                    'a'
+                ),
+                'data' => array()
+            )
+        )) {
+        $this->config = $arr;
+        
     }
     public function header($arr) {
         $this->head = $arr;
